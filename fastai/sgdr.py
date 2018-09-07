@@ -230,8 +230,8 @@ class LR_Finder2(LR_Finder):
         plt_val_l = smooth_curve(self.val_losses, 0.98) if smoothed else self.val_losses
         axs[0].plot(self.lrs[n_skip:-n_skip_end],self.losses[n_skip:-n_skip_end])
         axs[1].plot(self.lrs[n_skip:-n_skip_end],plt_val_l[n_skip:-n_skip_end])
-        axs[0].xscale('log')
-        axs[1].xscale('log')
+        axs[0].set_xscale('log')
+        axs[1].set_xscale('log')
 
 class CosAnneal(LR_Updater):
     ''' Learning rate scheduler that implements a cosine annealation schedule. '''
